@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/column.obj-88c6eb93147494a397ac1a43ce594f65.m
 [params]
 
 generate_tangents=true
-generate_lods=false
+generate_lods=true
 generate_shadow_mesh=true
 generate_lightmap_uv2=false
 generate_lightmap_uv2_texel_size=0.2
