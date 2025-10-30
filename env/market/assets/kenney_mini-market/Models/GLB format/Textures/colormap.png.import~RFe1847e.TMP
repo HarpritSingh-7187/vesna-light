@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk44ur76oub8r"
-path.s3tc="res://.godot/imported/colormap.png-6a4108bf265f28a32e208c9a028921bb.s3tc.ctex"
+uid="uid://gal75frc86el"
+path.s3tc="res://.godot/imported/colormap.png-b5306e27b4b6c22d599f29c934089e18.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/kenney_mini-market/Models/OBJ format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-6a4108bf265f28a32e208c9a028921bb.s3tc.ctex"]
+source_file="res://assets/kenney_mini-market/Models/GLB format/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-b5306e27b4b6c22d599f29c934089e18.s3tc.ctex"]
 
 [params]
 
