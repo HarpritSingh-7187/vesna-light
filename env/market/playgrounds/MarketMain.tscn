@@ -1,3 +1,2303 @@
-[gd_scene format=3 uid="uid://bgak1332wb27x"]
+[gd_scene load_steps=17 format=3 uid="uid://bgak1332wb27x"]
+
+[ext_resource type="PackedScene" uid="uid://cdgw40xwaiq4d" path="res://assets/kenney_mini-market/Models/GLB format/wall.glb" id="1_ako86"]
+[ext_resource type="PackedScene" uid="uid://c7avhj6eldce8" path="res://assets/kenney_mini-market/Models/GLB format/bottle-return.glb" id="3_1qqms"]
+[ext_resource type="PackedScene" uid="uid://1r67h60pt7e2" path="res://assets/kenney_mini-market/Models/GLB format/wall-door-rotate.glb" id="4_fghm6"]
+[ext_resource type="PackedScene" uid="uid://bbhe4m0eajh28" path="res://assets/kenney_mini-market/Models/GLB format/floor.glb" id="5_3ewqh"]
+[ext_resource type="PackedScene" uid="uid://cpn48qmuuf0m7" path="res://assets/kenney_mini-market/Models/GLB format/shelf-end.glb" id="6_31pfn"]
+[ext_resource type="PackedScene" uid="uid://c4iwt204546jg" path="res://assets/kenney_mini-market/Models/GLB format/shelf-boxes.glb" id="6_g3k8c"]
+[ext_resource type="PackedScene" uid="uid://bjr76kvtcravk" path="res://assets/kenney_mini-market/Models/GLB format/wall-corner.glb" id="7_g3k8c"]
+[ext_resource type="PackedScene" uid="uid://7ji4vy5guq4x" path="res://assets/kenney_mini-market/Models/GLB format/shelf-bags.glb" id="7_saoyf"]
+[ext_resource type="PackedScene" uid="uid://cv8j2ly3g7c1j" path="res://assets/kenney_mini-market/Models/GLB format/freezers-standing.glb" id="8_ptqx8"]
+[ext_resource type="PackedScene" uid="uid://bf5qicytsf68x" path="res://assets/kenney_mini-market/Models/GLB format/display-fruit.glb" id="9_j0ik6"]
+[ext_resource type="PackedScene" uid="uid://c16i8ewqlaqx3" path="res://assets/kenney_mini-market/Models/GLB format/freezer.glb" id="11_8kl66"]
+[ext_resource type="PackedScene" uid="uid://bdghpe1h4gjui" path="res://assets/kenney_mini-market/Models/GLB format/shopping-basket.glb" id="12_vf61x"]
+[ext_resource type="PackedScene" uid="uid://bee7u4kwdoe6w" path="res://assets/kenney_mini-market/Models/GLB format/shopping-cart.glb" id="13_vg8su"]
+
+[sub_resource type="Environment" id="Environment_04hk6"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_46rno"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tnfwl"]
 
 [node name="MarketMain" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_04hk6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_46rno")
+
+[node name="Floors" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="floor4" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor5" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor6" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor7" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor8" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor10" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor11" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor12" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor13" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor13/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor14" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor14/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor16" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor16/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor17" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor17/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor18" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor18/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor19" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor19/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor20" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor20/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor22" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor22/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor23" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor23/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor24" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor24/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor25" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor25/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor26" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor26/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor28" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor28/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor29" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor30" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor30/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor31" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor31/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor32" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor32/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor34" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor34/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor35" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor35/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor36" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor36"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor36/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor37" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor37"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor37/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor38" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor38"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor38/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor40" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor40"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor40/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor41" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor41"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor41/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor42" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor42"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor42/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor43" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor43"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor43/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor44" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor44"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor44/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor45" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor45"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor45/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor46" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor46"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor46/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor47" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor47/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor48" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor48"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor48/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor49" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor49"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor49/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor50" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor50"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor50/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor51" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor51"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor51/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor52" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor52"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor52/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor53" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor53"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor53/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor54" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor54"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor54/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor55" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor55"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor55/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor56" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor56"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor56/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor57" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor57"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor57/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor58" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor58"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor58/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor59" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor59"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor59/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor60" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor60"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor60/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor61" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor61"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor61/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor62" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor62"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor62/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor63" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor63"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor63/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor64" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor64"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor64/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor65" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor65"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor65/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor66" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor66"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor66/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor67" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor67"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor67/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor68" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor68"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor68/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor69" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor69"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor69/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor70" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor70"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor70/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor71" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor71"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor71/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor72" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor72"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor72/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor73" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor73"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor73/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor74" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor74"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor74/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor75" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor75"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor75/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor76" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor76"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor76/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor77" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor77"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor77/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor78" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor78"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor78/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor79" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor79"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor79/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor80" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor80"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor80/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor87" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor87"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor87/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor88" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor88"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor88/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor89" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor89"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor89/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor90" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor90"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor90/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor91" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor91"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor91/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor92" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor92"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor92/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor104" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor104"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor104/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor105" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor105"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor105/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor106" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor106"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor106/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor107" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor107"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor107/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor108" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor108"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor108/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor109" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor109"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor109/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor110" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor110"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor110/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor111" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor111"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor111/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor112" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor112"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor112/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor113" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor113"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor113/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor114" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor114"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor114/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor115" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor115"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor115/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor116" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor116"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor116/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor117" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor117"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor117/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor118" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor118"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor118/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor119" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor119"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor119/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor120" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor120"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor120/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor121" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor121"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor121/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor122" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor122"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor122/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor123" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor123"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor123/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor124" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor124"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor124/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor125" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor125"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor125/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor126" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor126"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor126/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor127" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor127"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor127/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor128" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor128"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor128/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor129" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor129"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor129/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor130" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor130"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor130/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor131" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor131"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor131/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor132" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor132"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor132/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor133" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor133"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor133/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor134" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor134"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor134/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor135" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor135"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor135/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor136" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor136"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor136/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor137" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor137"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor137/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor138" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor138"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor138/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor139" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor139"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor139/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor140" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor140"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor140/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor141" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor141"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor141/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor143" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor143"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor143/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor144" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor144"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor144/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor145" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor145"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor145/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor147" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor147"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor147/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor148" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor148"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor148/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor149" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor149"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor149/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor151" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor151"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor151/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor152" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor152"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor152/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor153" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor153"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor153/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor155" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor155"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor155/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor156" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor156"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor156/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor157" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor157"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor157/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor159" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor159"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor159/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor160" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor160"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor160/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor161" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor161"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor161/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor163" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor163"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor163/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor164" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor164"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor164/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor165" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor165"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor165/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor167" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor167"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor167/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor168" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor168"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor168/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor169" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor169"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor169/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor171" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor171"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor171/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor172" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor172"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor172/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor173" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor173"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor173/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor200" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor200"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor200/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor201" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor201"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor201/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor202" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor202"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor202/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor203" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor203"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor203/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor204" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor204"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor204/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor205" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor205"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor205/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor206" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor206"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor206/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor207" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor207"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor207/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor175" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor175"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor175/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor176" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor176"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor176/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor177" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor177"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor177/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor179" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor179"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor179/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor180" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor180"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor180/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor181" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor181"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor181/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor183" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor183"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor183/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor184" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor184"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor184/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor185" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor185"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor185/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor187" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor187"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor187/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor188" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor188"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor188/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor189" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor189"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor189/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor191" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor191"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor191/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor192" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor192"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor192/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor193" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor193"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor193/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor199" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor199"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor199/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor15" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor15/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor21" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor21/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor27" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor27/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor33" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor33/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor39" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor39"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor39/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor230" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor230"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor230/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor93" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor93"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor93/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor94" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor94"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor94/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor95" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor95"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor95/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor96" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor96"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor96/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor2" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor3" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor3/StaticBody3D/CollisionShape3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor3/StaticBody3D/CollisionShape3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor9" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -11.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor195" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor195"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor195/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor196" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -9.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor196"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor196/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor197" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -8.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor197"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor197/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor198" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor198"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor198/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor97" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -6.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor97"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor97/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor98" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor98"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor98/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor99" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor99"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor99/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor100" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor100"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor100/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor101" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor101"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor101/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor102" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor102"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor102/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor103" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor103"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor103/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor81" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor81"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor81/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor82" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor82"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor82/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor83" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor83"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor83/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor84" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor84"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor84/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor85" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor85"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor85/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor86" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor86"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor86/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor142" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor142"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor142/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor150" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor150"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor150/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor154" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor154"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor154/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor166" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor166"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor166/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor208" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor208"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor208/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor213" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor213"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor213/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor217" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor217"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor217/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor218" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor218"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor218/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor174" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor174"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor174/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor186" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor186"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor186/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor190" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor190"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor190/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor223" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor223"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor223/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor225" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor225"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor225/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor226" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor226"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor226/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor227" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor227"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor227/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor146" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor146"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor146/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor158" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor158"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor158/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor162" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor162"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor162/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor170" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor170"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor170/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor209" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor209"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor209/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor210" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor210"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor210/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor211" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor211"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor211/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor212" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor212"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor212/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor214" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor214"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor214/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor215" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor215"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor215/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor216" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor216"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor216/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor219" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor219"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor219/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor220" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor220"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor220/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor221" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor221"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor221/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor178" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor178"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor178/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor222" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor222"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor222/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor224" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor224"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor224/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor228" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor228"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor228/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor229" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor229"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor229/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor194" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor194"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor194/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="floor182" parent="NavigationRegion3D/Floors" instance=ExtResource("5_3ewqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floors/floor182"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floors/floor182/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="Walls" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="wall2" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall3" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall4" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall5" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall6" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall7" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall8" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall9" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall-corner2" parent="NavigationRegion3D/Walls" instance=ExtResource("7_g3k8c")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall-corner2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall-corner2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall10" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -11)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall11" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall12" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -9)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall13" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -8)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall13/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall14" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall14/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall15" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall15/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall16" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall16/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall25" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall25/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall26" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall26/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall27" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall27/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall28" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall28/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall29" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall30" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall30/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall31" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall31/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall31/StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall31/StaticBody3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall32" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall32/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall-corner3" parent="NavigationRegion3D/Walls" instance=ExtResource("7_g3k8c")]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 8, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall-corner3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall-corner3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall18" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(0.0011693991, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, 0.0011693991, 8, 0, -3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall18/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall19" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(0.0011693991, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, 0.0011693991, 8, 0, -2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall19/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall20" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(0.0011693991, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, 0.0011693991, 8, 0, -1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall20/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall21" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(0.0011693991, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, 0.0011693991, 8, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall21/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall22" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(0.0011693991, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, 0.0011693991, 8, 0, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall22/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall23" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(0.0011693991, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, 0.0011693991, 8, 0, 2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall23/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall24" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(0.0011693991, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, 0.0011693991, 8, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall24/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall-corner4" parent="NavigationRegion3D/Walls" instance=ExtResource("7_g3k8c")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall-corner4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall-corner4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall40" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -11)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall40"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall40/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall41" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall41"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall41/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall42" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -9)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall42"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall42/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall43" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -8)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall43"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall43/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall44" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall44"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall44/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall45" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall45"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall45/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall46" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall46"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall46/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall-corner5" parent="NavigationRegion3D/Walls" instance=ExtResource("7_g3k8c")]
+transform = Transform3D(-4.371138e-08, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -4.371138e-08, -1, 0, -12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall-corner5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall-corner5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall47" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall47/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall48" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall48"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall48/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall49" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall49"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall49/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall50" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, -1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall50"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall50/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall51" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall51"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall51/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall52" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall52"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall52/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall53" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, 2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall53"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall53/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall54" parent="NavigationRegion3D/Walls" instance=ExtResource("1_ako86")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -1, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Walls/wall54"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Walls/wall54/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tnfwl")
+
+[node name="wall-door-rotate3" parent="." instance=ExtResource("4_fghm6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 0, -4)
+
+[node name="shelf-end2" parent="." instance=ExtResource("6_31pfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2059765, 1.1920929e-07, -1.5990545)
+
+[node name="shelf-boxes2" parent="." instance=ExtResource("6_g3k8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.091829, 0, -1.8521063)
+
+[node name="shelf-bags2" parent="." instance=ExtResource("7_saoyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7844265, 0, -1.7662129)
+
+[node name="freezers-standing2" parent="." instance=ExtResource("8_ptqx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.832891, 0, -1.554024)
+
+[node name="display-fruit2" parent="." instance=ExtResource("9_j0ik6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7184836, 0, -0.5458572)
+
+[node name="bottle-return2" parent="." instance=ExtResource("3_1qqms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82321906, 0, -1.3798571)
+
+[node name="freezer2" parent="." instance=ExtResource("11_8kl66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6254797, 0, -0.25608754)
+
+[node name="shopping-basket2" parent="." instance=ExtResource("12_vf61x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8432915, 0, -0.6278739)
+
+[node name="shopping-cart2" parent="." instance=ExtResource("13_vg8su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6323366, 0, -0.5138264)
+
+[node name="shelf-end3" parent="." instance=ExtResource("6_31pfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.021779, 0, -1.417007)
