@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/shopping-basket.obj-3b40e71374132c1e4909bbfa5
 [params]
 
 generate_tangents=true
-generate_lods=false
+generate_lods=true
 generate_shadow_mesh=true
 generate_lightmap_uv2=false
 generate_lightmap_uv2_texel_size=0.2
