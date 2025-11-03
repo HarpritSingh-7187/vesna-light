@@ -1,3 +1,8 @@
+BUG NEL CARICAMENTO SCENA. Creo un nuovo fork:
+
+
+
+
 # VEsNA-light
 
 VEsNA is a framework that enables JaCaMo agents to be embodied inside a virtual environment. This repository contains the bridge between agent minds and agent bodies.
